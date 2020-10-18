@@ -1,0 +1,146 @@
+/*Master Styles*/
+/*removes the default page margin*/
+body {
+    margin: 0px;
+    font-family: 'Noto Serif', serif;
+}
+
+/*We are creating a grid with 1 fr (fractional unit). that one fractional unit goes from the left side of teh screen to the right side of the screen.*/
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/*This code (lines 13-56) creates our navigation bar on top of the document.*/
+/*Nav Styles*/
+/*uses flex to horizontally align the name with the links*/
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+}
+
+/*uses flex to horizontally align our links*/
+.left-side {
+    display: flex;
+}
+
+/*This code follows a tree from nav-wrapper to left-side to div within the HTML file. Then it changes the font size and type*/
+.nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+/*Creates a transparent border under the links*/
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+/*changes the color of the links to gray and removes the underline*/
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+/*creates a black border under teh link when hovering the mouse over the link*/
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid black;
+}
+
+/*changes the link to black when hovering the mouse over it.*/
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid black;
+}
+
+/*important is used to override the standard color behaviour*/
+.active-nav-link a {
+    color: black !important;
+}
+
+/*Portfolio Styles*/
+/*adds 3 columns to my grid for the portfolio achievements*/
+.portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item-wrapper {
+    position: relative;
+}
+
+.portfolio-img-background {
+    height: 350px;
+    width: 100%;
+    background-size: cover; /*no overlap*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*position absolute would not work without position relative above*/
+.img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*centers from left to right*/
+    align-items: center; /*centers from top to bottom*/
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logo-wrapper img {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.img-text-wrapper .subtitle {
+    transition: 1s;
+    font-weight: 900;
+    color: transparent;
+}
+
+/*makes are font bold and green*/
+.img-text-wrapper:hover .subtitle {
+    font-weight: 900;
+    color: red;
+}
+
+.img-darken {
+    transition: 1s;
+    filter: brightness(10%);
+}
+
+.img-brighten {
+    transition: 1s;
+    filter: brightness(100%);
+}
+
+/*About page styles*/
+.two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper img {
+    width: 100%;
+    padding: 15px;
+}
+
+.profile-content-wrapper {
+    padding: 30px;
+
+}
+
+.profile-content-wrapper h1 {
+    color: lightseagreen;
+}
